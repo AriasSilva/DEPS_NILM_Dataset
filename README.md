@@ -80,4 +80,4 @@ Utilizando el modelo con el mejor desempeño en el dataset DEPS, **se ha impleme
 
 A continuación se muestra una captura de pantalla del reporte, el cual puede ser consultado en el [siguiente enlace](/reporte/report.html) y cuyo código escrito en Python se encuentra [acá](/reporte/create_report.py).
 
-[![reporte](/imagenes/reporte.png)](/reporte/reporte.html)
+[![reporte](/imagenes/reporte.png)](https://andresariassilva.github.io/DEPS_NILM_Dataset/reporte/report.html)
