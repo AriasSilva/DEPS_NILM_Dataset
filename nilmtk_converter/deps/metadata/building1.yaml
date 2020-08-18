@@ -1,0 +1,85 @@
+instance: 1
+original_name: Aula 2.2 Bis
+n_occupants: 21
+description: Classroom located on the first floor of the EPS building. It has capacity for 21 people and is equipped with an interactive screen, computers and internet connection.
+
+elec_meters:
+  1: &Meter1 
+    site_meter: true
+    device_model: Main_meter_A
+  2: &Meter2 
+    submeter_of: 0
+    phase: R
+    device_model: Main_sub_meter_A
+  3: &Meter3
+    submeter_of: 0
+    phase: S
+    device_model: Main_sub_meter_A
+  4: &Meter4
+    submeter_of: 0
+    phase: T
+    device_model: Main_sub_meter_A
+  5: &Meter5
+    submeter_of: 2
+    phase: R
+    device_model: Sub_meter_B
+  6: &Meter6
+    submeter_of: 3
+    phase: S
+    device_model: Sub_meter_B  
+  7: &Meter7
+    submeter_of: 4
+    phase: T
+    device_model: Sub_meter_C
+  8: &Meter8
+    submeter_of: 3
+    phase: S
+    device_model: Sub_meter_C
+  9: &Meter9
+    submeter_of: 2
+    phase: R
+    device_model: Sub_meter_C
+  10: &Meter10
+    submeter_of: 3
+    phase: S
+    device_model: Sub_meter_D
+    
+appliances:
+- original_name: Lights_1
+  type: light
+  instance: 1
+  description: Group of 8 fluorescent lamp
+  multiple: true
+  meters: [5]
+  
+- original_name: Lights_2
+  type: light
+  description: Group of 5 fluorescent lamp
+  instance: 2
+  multiple: true
+  meters: [6]
+ 
+- original_name: HVAC_1
+  type: air conditioner
+  description: Air conditioner N°1
+  instance: 1
+  meters: [7]
+
+- original_name: HVAC_2
+  type: air conditioner
+  description: Air conditioner N°2
+  instance: 2
+  meters: [8]
+
+- original_name: HVAC_4
+  type: air conditioner
+  description: Air conditioner N°4
+  instance: 3
+  meters: [9]
+
+- original_name: Rack
+  type: server computer
+  description: Computer rack, has a server and several devices
+  multiple: true
+  instance: 1
+  meters: [10]

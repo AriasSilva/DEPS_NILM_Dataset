@@ -1,0 +1,58 @@
+Main_meter_A:
+  model: Type_A
+  description: 3 Phase meter, aggregated measurement
+  sample_period: 1
+  max_sample_period: 10
+  measurements:
+  - physical_quantity: power
+    type: active
+  - physical_quantity: power
+    type: reactive
+
+Main_sub_meter_A:
+  model: Type_A
+  description: 3 Phase meter, individual measurements
+  sample_period: 1
+  max_sample_period: 10
+  measurements:
+  - physical_quantity: voltage
+  - physical_quantity: current
+  - physical_quantity: power
+    type: active
+  - physical_quantity: power
+    type: reactive
+  
+Sub_meter_B:
+  model: Type_B
+  description: 1 Phase meter
+  sample_period: 1
+  max_sample_period: 10
+  measurements:
+  - physical_quantity: power
+    type: active
+
+Sub_meter_C:
+  model: Type_C
+  description: 3 Phase meter
+  sample_period: 1
+  max_sample_period: 10
+  measurements:
+  - physical_quantity: voltage
+  - physical_quantity: current
+  - physical_quantity: power
+    type: active
+  - physical_quantity: power
+    type: reactive
+
+Sub_meter_D:
+  model: Type_D
+  description: 1 Phase meter
+  sample_period: 1
+  max_sample_period: 10
+  measurements:
+  - physical_quantity: voltage
+  - physical_quantity: current
+  - physical_quantity: power
+    type: active
+  - physical_quantity: power
+    type: reactive

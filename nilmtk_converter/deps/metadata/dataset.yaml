@@ -1,0 +1,17 @@
+name: DEPS
+long_name: Dataset Escuela Politecnica Superior
+subject: Disaggregated power demand from university building
+number_of_buildings: 1
+creators:
+- Arias Silva, Andrés
+contact: andarisil@alum.us.es
+institution: Universidad de Sevilla
+date: 2020-04-06
+timezone: Europe/Madrid
+geo_location:
+  locality: Seville
+  country: ES
+  latitude: 37.376264
+  longitude: -6.002472
+schema: https://github.com/nilmtk/nilm_metadata/tree/v0.2
+related_documents: https://github.com/AndresAriasSilva/TFM_NILMTK-public
