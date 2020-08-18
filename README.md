@@ -21,7 +21,9 @@ En la siguiente figura se muestra un ejemplo de desagregación de la demanda usa
 
 ## NILMTK
 
-NILMTK es un kit de herramientas de código abierto diseñado específicamente para permitir un acceso fácil y brindar un análisis comparativo de algoritmos de desagregación de demanda en diversos datasets. NILMTK proporciona un pipeline completo, intérpretes de diversos datasets y métricas de precisión, lo que reduce la barrera de entrada para investigadores y desarrolladores.
+NILMTK es un kit de herramientas de código abierto diseñado específicamente para permitir un acceso fácil y brindar un análisis comparativo de algoritmos de desagregación de demanda en diversos datasets. NILMTK proporciona un *pipeline* completo, intérpretes de diversos datasets y métricas de precisión, lo que reduce la barrera de entrada para investigadores y desarrolladores. La siguiente figura muestra el *pipeline* de NILMTK:
+
+![pipeline](/imagenes/pipeline.svg)
 
 Se recomienda instalar NILMTK bajo un *enviroment* de paquetes de Python, específicamente [Anaconda](https://www.anaconda.com/distribution/). Una guía de instalación de NILMTK en Windows se encuentra en el [siguiente enlace](). 
 
