@@ -1,14 +1,18 @@
-# Implementación y uso del convertidor DEPS
+# 1. Implementación y uso del convertidor DEPS
 
 ## Implementación en NILMTK
 
 Para su implementación en Anaconda (entorno nilmtk-env) es necesario habilitar una carpeta dentro del entorno, que contenga el convertidor y los archivos de metadatos.
 
-La carpeta del convertidor DEPS debe ser alojada en la carpeta: ***nilmtk\dataset_converters\***
+El convertidor y los metadatos se pueden [descargar desde este enlace](https://downgit.github.io/#/home?url=https://github.com/AndresAriasSilva/DEPS_NILM_Dataset/tree/master/nilmtk_converter/deps).
+
+La carpeta del convertidor DEPS debe ser alojada localmente en : ***nilmtk/dataset_converters/***
 
 Luego, se debe indicar que se ha añadido el convertidor modificando el archivo ***__init__.py*** de la carpeta de los convertidores agregando la siguiente línea al archivo: `from .deps.convert_deps import convert_deps `
 
-Finalmente reiniciar nilmtk
+Finalmente reiniciar el kernel de python
+
+![convertidor.svg](attachment:convertidor.svg)
 
 ## Uso
 
