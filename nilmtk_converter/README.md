@@ -12,7 +12,7 @@ Luego, se debe indicar que se ha añadido el convertidor modificando el archivo 
 
 Finalmente reiniciar el kernel de python
 
-![convertidor.svg](attachment:convertidor.svg)
+![convertidor](/imagenes/convertidor.svg)
 
 ## Uso
 
