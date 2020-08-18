@@ -1,5 +1,5 @@
 theme: jekyll-theme-minimal
-title: [DEPS Dataset]
-description: [Dataset de la Escuela Politénica Superior]
-logo: [/imagenes/logo.svg]
-show_downloads: [true]
+title: DEPS Dataset
+description: Dataset de la Escuela Politénica Superior
+logo: /imagenes/logo.svg
+show_downloads: true
