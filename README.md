@@ -1,17 +1,13 @@
 # DEPS: NILM Dataset
-[TOC]
-
 Este repositorio es parte del Trabajo Final de Máster: "Desagregación de la demanda usando Non-Intrusive Load Monitoring Toolkit (NILMTK)”  del alumno [Andrés Arias Silva](https://www.linkedin.com/in/ariassilva/).
 
 El objetivo de este trabajo es mostrar el uso y potenciales aplicaciones de la herramienta de desagregación de la demanda Non-Intrusive Load Monitoring Toolkit ([NILMTK](http://nilmtk.github.io/)) a través de la implementación de un caso real que involucra la creación de un dataset de uso público con datos de energía del Aula 2.2 Bis de la Escuela Politécnica Superior de la Universidad de Sevilla.
 
-El dataset denominado DEPS (Dataset de la Escuela Politécnica Superior) se encuentra en formato HDF5 y puede ser descargado en el siguiente enlace. Adicionalmente, se proporciona un convertidor para ser utilizado en NILMTK en caso de ser requerido.
-
-
+El dataset denominado **DEPS (Dataset de la Escuela Politécnica Superior)** se encuentra en formato HDF5 y puede ser descargado en el siguiente enlace. Adicionalmente, se proporciona un convertidor para ser utilizado en NILMTK en caso de ser requerido.
 
 ## NILM
 
-La desagregación de la demanda, también conocida como Non-Intrusive Load Monitoring  (NILM), se define como una técnica computacional para estimar el consumo individual de energía eléctrica de diversos dispositivos utilizando la lectura agregada de un solo medidor [[1]](https://ieeexplore.ieee.org/document/192069?section=abstract)[[2]](https://spiral.imperial.ac.uk/handle/10044/1/49452).
+La desagregación de la demanda, también conocida como Non-Intrusive Load Monitoring  (NILM), se define como una técnica computacional para estimar el consumo individual de energía eléctrica de diversos dispositivos utilizando la lectura agregada de un solo medidor [[2]](https://ieeexplore.ieee.org/document/192069?section=abstract)[[3]](https://spiral.imperial.ac.uk/handle/10044/1/49452).
 
 Dentro de sus beneficios se destacan los siguientes:
 
@@ -19,7 +15,7 @@ Dentro de sus beneficios se destacan los siguientes:
 - Aplicaciones de respuesta a la demanda o *demand response* (DR): 
 - Identificación de averías y consumo ilegal de energía
 
-![nilm](C:\Users\arias\Documents\GitHub\DEPS_NILM_Dataset\imagenes\nilm.svg)
+![nilm](\imagenes\nilm.svg)
 
 > Ejemplo de desagregación de la demanda usando el dataset REDD: [redd.csail.mit.edu.]()
 
@@ -29,11 +25,14 @@ NILMTK es un kit de herramientas de código abierto diseñado específicamente p
 
 Los desarrolladores de la herramienta recomiendan instalar NILMTK bajo un entorno virtual o *enviroment* de paquetes de Python, específicamente [Anaconda]([www.anaconda.com/distribution](https://www.anaconda.com/distribution/).). Una guía de instalación de NILMTK en Windows se encuentra en el [siguiente enlace](). 
 
-Adicionalmente, toda la información sobre NILMTK se encuentra en http://nilmtk.github.io/
+Adicionalmente, toda la información sobre NILMTK se encuentra en [nilmtk.github.io](http://nilmtk.github.io/)
 
-## DEPS
+## Nuevo Dataset DEPS
 
-Dentro de las instalaciones de la Escuela Politécnica Superior (EPS) de la Universidad de Sevilla (US) se encuentra el Aula 2.2 Bis, la cual está equipada con un cuadro eléctrico con diversos medidores. Estos medidores registran diversas variables eléctricas incluido el consumo agregado del aula y consumos individuales de determinados dispositivos. 
+Dentro de las instalaciones de la Escuela Politécnica Superior (EPS) de la Universidad de Sevilla (US) se encuentra el Aula 2.2 Bis, la cual está equipada con un cuadro eléctrico con diversos medidores. Estos medidores registran diversas variables eléctricas incluido el consumo agregado del aula y consumos individuales de determinados dispositivos en las siguientes fechas:
+
+- Desde el lunes 24/02/2020 a las 00:00:00 hrs. al jueves 27/02/2020 a las 23:59:59 hrs.
+- Desde el lunes 02/03/2020 a las 00:00:00 hrs. al viernes 06/03/2020 a las 23:59:59 hrs.
 
 ### Adquisición de datos
 
@@ -49,17 +48,41 @@ El medidor principal (Main_RST) mide P y Q agrgegadas y también opera como medi
 
 En la siguiente figura se muestra un esquema unilineal eléctrico de los medidores.
 
-![circuito](C:\Users\arias\Documents\GitHub\DEPS_NILM_Dataset\imagenes\circuito.svg)
+![circuito](\imagenes\circuito.svg)
 
 > Figura de elaboración propia
 
 ### Convertidor NILMTK
 
+Para la creación de un dataset compatible con NILMTK es necesario contar con un convertidor que estructure los datos y sus metadatos en el formato HDF5. En el presente trabajo se utiliza como referencia el convertidor REDD previamente desarrollado, incorporándole modificaciones para que los datos extraídos desde el Aula 2.2 Bis sean compatibles.
+
+- El convertidor y los metadatos se pueden [descargar desde este enlace](https://downgit.github.io/#/home?url=https://github.com/AndresAriasSilva/DEPS_NILM_Dataset/tree/master/nilmtk_converter/deps).
+- Para su mejor comprensión, se ha elaborado una [guía de implementación y uso del convertidor](/nilmtk_converter)
+
+### Análisis y modelos de desagregación 
+
+Con la ayuda de las diversas funciones de NILMTK se analizan datos y metadatos del dataset DEPS. En los siguientes notebooks se presentan diversos análisis que permiten posteriormente generar y comparar diversos modelos de desagregación usando varios periodos y métodos de muestreo basados en los algoritmos CO (*Combinatorial Optimisation*) y FHMM (*Factorial Hidden Markov Models*):
+
+- [Análisis - NILMTK-DF](/notebooks)
+- [Análisis - Diagnóstico y Estadísticas](/notebooks)
+- [Preprocesamiento](/notebooks)
+- [Entrenamiento](/notebooks)
+- [Validación](/notebooks)
+- [Desagregación](/notebooks)
+
+Los resultados de los análisis de los diferentes modelos muestran bajo diferentes métricas que el rendimiento del modelo FHMM entrenado con datos potencia activa promedio con un periodo de 10 minutos posee un buen desempeño para su implementación. En la siguiente imagen se muestra un extracto de los análisis a las métricas obtenidas de los diferentes modelos implementados.
 
 
-### Análisis del dataset DEPS
+
+![F1](\imagenes\F1.svg)
+
+> Figura de elaboración propia
+
+### Reporte de desagregación
+
+Utilizando el modelo con el mejor desempeño en el dataset DEPS, se ha implementado un código para generar un reporte básico en HTML de los resultados de la desagregación.
 
 
 
-### Reporte
+[![reporte](/imagenes/reporte.png)](/reporte/reporte.html)
 
