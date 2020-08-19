@@ -7,7 +7,7 @@ El dataset denominado **DEPS (Dataset de la Escuela Politécnica Superior)** se 
 
 ## NILM
 
-La desagregación de la demanda, también conocida como Non-Intrusive Load Monitoring (NILM), se define como una técnica computacional para estimar el consumo individual de energía eléctrica de diversos dispositivos utilizando la lectura agregada de un solo medidor [[1]](https://ieeexplore.ieee.org/document/192069?section=abstract)[[2]](https://spiral.imperial.ac.uk/handle/10044/1/49452).
+La desagregación de la demanda, también conocida como Non-Intrusive Load Monitoring (NILM), se define como una técnica computacional para estimar el consumo individual de energía eléctrica de diversos dispositivos utilizando la lectura agregada de un solo medidor [[1]](https://ieeexplore.ieee.org/document/192069?section=abstract)[[2]](https://spiral.imperial.ac.uk/handle/10044/1/49452).  Este concepto ha tomado relevancia entre los investigadores en la última década tal como lo indica este [análisis](/notebooks/Publicaciones/Publicaciones.ipynb) de publicaciones NILM:
 
 Dentro de sus beneficios se destacan los siguientes:
 
@@ -25,7 +25,7 @@ NILMTK es un kit de herramientas de código abierto diseñado específicamente p
 
 ![pipeline](/imagenes/pipeline.svg)
 
-Se recomienda instalar NILMTK bajo un *enviroment* de paquetes de Python, específicamente [Anaconda](https://www.anaconda.com/distribution/). Una guía de instalación de NILMTK en Windows se encuentra en el [siguiente enlace](). 
+Se recomienda instalar NILMTK bajo un *enviroment* de paquetes de Python, específicamente [Anaconda](https://www.anaconda.com/distribution/). Una guía de instalación de NILMTK en Windows se encuentra en el [siguiente enlace](https://github.com/nilmtk/nilmtk/blob/master/docs/manual/user_guide/install_user.md). 
 
 Adicionalmente, toda la información sobre NILMTK se encuentra en [nilmtk.github.io](http://nilmtk.github.io/).
 
@@ -40,13 +40,13 @@ Dentro de las instalaciones de la Escuela Politécnica Superior de la Universida
 
 DEPS contiene datos agregados y metadatos de un sistema trifásico (R, S ,T) de seis dispositivos de consumo, conectados a diferentes fases. La siguiente tabla resume las medidas registradas en el dataset.
 
-| Medidor                           | Medidas Registradas | Periodo de Muestreo |
-| --------------------------------- | ------------------- | ------------------- |
-| 1x Medidor trifásico principal 3F | P, Q                | 1 segundo           |
-| 3 x Medidores por fase (R, S, T)  | P, Q, V, I          | 1 segundo           |
-| 6 x Medidores de Dispositivos     | P, Q, V, I          | 1 segundo           |
+| Medidor                              | Medidas Registradas | Periodo de Muestreo |
+| ------------------------------------ | ------------------- | ------------------- |
+| 1x Medidor principal trifásico (RST) | P, Q                | 1 segundo           |
+| 3 x Medidores por fase (R, S y T)    | P, Q, V, I          | 1 segundo           |
+| 6 x Medidores de Dispositivos        | P, Q, V, I          | 1 segundo           |
 
-El medidor principal (Main_RST) midela potencia P y Q agregada, también opera como medidor por fase (Main_R, Main_S y Main_T) permitiendo registrar P, Q, V e I para cada una de ellas. En cuanto a los dispositivos, se cuenta con mediciones de P de dos grupos de iluminación (Lights_1 y Lights_2), mediciones de P, Q, V e I para tres equipos de aire acondicionado (HVAC_1, HVAC_2 y HVAC_4) y un rack de equipos informáticos (Rack). 
+El medidor principal (Main_RST) mide la potencia P y Q agregada, también opera como medidor por fase (Main_R, Main_S y Main_T) permitiendo registrar P, Q, V e I para cada una de ellas. En cuanto a los dispositivos, se cuenta con mediciones de P de dos grupos de iluminación (Lights_1 y Lights_2), mediciones de P, Q, V e I para tres equipos de aire acondicionado (HVAC_1, HVAC_2 y HVAC_4) y un rack de equipos informáticos (Rack). 
 
 En la siguiente figura se muestra un esquema unilineal eléctrico de los medidores.
 
