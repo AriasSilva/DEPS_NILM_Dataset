@@ -1,5 +1,5 @@
 # DEPS: NILM Dataset
-Este repositorio es parte del Trabajo Final de Máster: "Desagregación de la demanda usando Non-Intrusive Load Monitoring Toolkit (NILMTK)” de [Andrés Arias Silva](https://www.linkedin.com/in/ariassilva/).
+Este repositorio es parte del Trabajo Final de Máster: "Desagregación de la demanda usando Non-Intrusive Load Monitoring Toolkit (NILMTK)” conducente al grado de Máster en Sistemas Inteligentes de Energía y Transporte de [Andrés Arias Silva](https://www.linkedin.com/in/ariassilva/). El proyecto cuenta con la colaboración de los docentes Dr. Enrique Personal y D. Antonio Parejo de la Universidad de Sevilla.
 
 El objetivo de este trabajo es mostrar el uso y potenciales aplicaciones de la herramienta de desagregación de la demanda Non-Intrusive Load Monitoring Toolkit ([NILMTK](http://nilmtk.github.io/)) a través de la implementación de un caso real que involucra la creación de un dataset de uso público con datos de energía del Aula 2.2 Bis de la Escuela Politécnica Superior de la Universidad de Sevilla.
 
