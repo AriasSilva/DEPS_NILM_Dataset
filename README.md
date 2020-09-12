@@ -66,7 +66,7 @@ Con la ayuda de las diversas funciones de NILMTK se analizan datos y metadatos d
 - [Análisis - NILMTK-DF](https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/1.An%C3%A1lisis%20-%20NILMTK-DF.ipynb)
 - [Análisis - Diagnóstico y Estadísticas](https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/2.An%C3%A1lisis%20-%20Diagn%C3%B3stico%20y%20Estad%C3%ADsticas.ipynb)
 - [Preprocesamiento](https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/3.Preprocesamiento.ipynb)
-- [Entrenamiento](/https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/4.Entrenamiento.ipynb)
+- [Entrenamiento](https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/4.Entrenamiento.ipynb)
 - [Validación](https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/5.Validaci%C3%B3n.ipynb)
 - [Desagregación](https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/6.Desagregaci%C3%B3n.ipynb)
 
