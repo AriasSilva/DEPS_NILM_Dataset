@@ -15,7 +15,7 @@ Dentro de sus beneficios se destacan los siguientes:
 - Aplicaciones de respuesta a la demanda o *demand response* (DR) 
 - Identificación de averías y consumo ilegal de energía
 
-En la siguiente figura se muestra un ejemplo de desagregación de la demanda usando el dataset [REDD](redd.csail.mit.edu):
+En la siguiente figura se muestra un ejemplo de desagregación de la demanda usando el dataset [REDD](http://redd.csail.mit.edu/):
 
 ![nilm](/imagenes/nilm.svg)
 
@@ -72,7 +72,7 @@ Con la ayuda de las diversas funciones de NILMTK se analizan datos y metadatos d
 
 Los resultados de los análisis de los diferentes modelos muestran, bajo diferentes métricas, que el rendimiento del modelo FHMM entrenado con datos de la mediana de la potencia activa con un periodo de 30 minutos posee un buen desempeño para su implementación. En la siguiente imagen se muestra un extracto de los análisis a las métricas obtenidas de los diferentes modelos implementados.
 
-![F1](/imagenes/F1.svg)
+![F1](/imagenes/FEAC.svg)
 
 ### Reporte de desagregación
 

@@ -104,7 +104,7 @@ def create_report(data_dir, html_dir):
         """+lines+"""
         <p><br>
         </p>
-        <p>Este reporte es parte del proyecto <a href="https://andresariassilva.github.io/DEPS_NILM_Dataset/"><span
+        <p>Este reporte es parte del proyecto <a href="https://ariassilva.github.io/DEPS_NILM_Dataset/"><span
 
               style="color: #337ab7;">DEPS-Dataset</span><br>
           </a></p>
