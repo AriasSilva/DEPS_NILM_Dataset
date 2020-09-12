@@ -7,7 +7,7 @@ El dataset denominado **DEPS (Dataset de la Escuela Politécnica Superior)** se 
 
 ## NILM
 
-La desagregación de la demanda, también conocida como Non-Intrusive Load Monitoring (NILM), se define como una técnica computacional para estimar el consumo individual de energía eléctrica de diversos dispositivos utilizando la lectura agregada de un solo medidor [[1]](https://ieeexplore.ieee.org/document/192069?section=abstract)[[2]](https://spiral.imperial.ac.uk/handle/10044/1/49452).  Este concepto ha tomado relevancia entre los investigadores en la última década tal como lo indica este [análisis](/notebooks/Publicaciones/Publicaciones.ipynb) de publicaciones NILM:
+La desagregación de la demanda, también conocida como Non-Intrusive Load Monitoring (NILM), se define como una técnica computacional para estimar el consumo individual de energía eléctrica de diversos dispositivos utilizando la lectura agregada de un solo medidor [[1]](https://ieeexplore.ieee.org/document/192069?section=abstract)[[2]](https://spiral.imperial.ac.uk/handle/10044/1/49452).  Este concepto ha tomado relevancia entre los investigadores en la última década tal como lo indica este [análisis](https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/Publicaciones/Publicaciones.ipynb) de publicaciones NILM:
 
 Dentro de sus beneficios se destacan los siguientes:
 
@@ -43,7 +43,7 @@ DEPS contiene datos agregados y metadatos de un sistema trifásico (R, S ,T) de 
 | Medidor                              | Medidas Registradas | Periodo de Muestreo |
 | ------------------------------------ | ------------------- | ------------------- |
 | 1x Medidor principal trifásico (RST) | P, Q                | 1 segundo           |
-| 3 x Medidores por fase (R, S y T)    | P, Q, V, I          | 1 segundo           |
+| 3 x Medidores de fase (R, S y T)     | P, Q, V, I          | 1 segundo           |
 | 6 x Medidores de Dispositivos        | P, Q, V, I          | 1 segundo           |
 
 El medidor principal (Main_RST) mide la potencia P y Q agregada, también opera como medidor por fase (Main_R, Main_S y Main_T) permitiendo registrar P, Q, V e I para cada una de ellas. En cuanto a los dispositivos, se cuenta con mediciones de P de dos grupos de iluminación (Lights_1 y Lights_2), mediciones de P, Q, V e I para tres equipos de aire acondicionado (HVAC_1, HVAC_2 y HVAC_4) y un rack de equipos informáticos (Rack). 
@@ -57,11 +57,11 @@ En la siguiente figura se muestra un esquema unilineal eléctrico de los medidor
 Para la creación de un dataset compatible con NILMTK es necesario contar con un convertidor que estructure los datos y sus metadatos en el formato HDF5. En el presente trabajo se utiliza como referencia el convertidor REDD previamente desarrollado, incorporándole modificaciones para que los datos extraídos desde el Aula 2.2 Bis sean compatibles.
 
 - El convertidor y los metadatos se pueden [descargar desde este enlace](https://downgit.github.io/#/home?url=https://github.com/AndresAriasSilva/DEPS_NILM_Dataset/tree/master/nilmtk_converter/deps).
-- Para su mejor comprensión, se ha elaborado una [guía de implementación y uso del convertidor](/nilmtk_converter)
+- Para su mejor comprensión, se ha elaborado una [guía de implementación y uso del convertidor](https://github.com/AriasSilva/DEPS_NILM_Dataset/tree/master/nilmtk_converter)
 
 ### Análisis y modelos de desagregación 
 
-Con la ayuda de las diversas funciones de NILMTK se analizan datos y metadatos del dataset DEPS. En los siguientes notebooks se presentan diversos análisis que permiten posteriormente generar y comparar diversos modelos de desagregación usando varios periodos y métodos de muestreo basados en los algoritmos CO (*Combinatorial Optimisation*) y FHMM (*Factorial Hidden Markov Models*):
+Con la ayuda de las diversas funciones de NILMTK se analizan datos y metadatos del dataset DEPS. En los siguientes notebooks se presentan diversos análisis y preprocesamiento necesario para posteriormente generar y comparar diversos modelos de desagregación usando varios periodos y métodos de muestreo basados en los algoritmos CO (*Combinatorial Optimisation*) y FHMM (*Factorial Hidden Markov Models*):
 
 - [Análisis - NILMTK-DF](/notebooks)
 - [Análisis - Diagnóstico y Estadísticas](/notebooks)
@@ -70,9 +70,7 @@ Con la ayuda de las diversas funciones de NILMTK se analizan datos y metadatos d
 - [Validación](/notebooks)
 - [Desagregación](/notebooks)
 
-Los resultados de los análisis de los diferentes modelos muestran, bajo diferentes métricas, que el rendimiento del modelo FHMM entrenado con datos potencia activa promedio con un periodo de 10 minutos posee un buen desempeño para su implementación. En la siguiente imagen se muestra un extracto de los análisis a las métricas obtenidas de los diferentes modelos implementados.
-
-
+Los resultados de los análisis de los diferentes modelos muestran, bajo diferentes métricas, que el rendimiento del modelo FHMM entrenado con datos de la mediana de la potencia activa con un periodo de 30 minutos posee un buen desempeño para su implementación. En la siguiente imagen se muestra un extracto de los análisis a las métricas obtenidas de los diferentes modelos implementados.
 
 ![F1](/imagenes/F1.svg)
 
