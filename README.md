@@ -1,5 +1,5 @@
 # DEPS: NILM Dataset
-Este repositorio es parte del Trabajo Final de Máster: "Desagregación de la demanda usando Non-Intrusive Load Monitoring Toolkit (NILMTK)” conducente al grado de Máster en Sistemas Inteligentes de Energía y Transporte de [Andrés Arias Silva](https://www.linkedin.com/in/ariassilva/). El proyecto cuenta con la colaboración de los docentes Dr. Enrique Personal y D. Antonio Parejo de la Universidad de Sevilla.
+Este repositorio es parte del Trabajo Final de Máster: "Desagregación de la demanda usando Non-Intrusive Load Monitoring Toolkit (NILMTK)” conducente al grado de Máster en Sistemas Inteligentes de Energía y Transporte con especialidad en Smart Cities del alumno [Andrés Arias Silva](https://www.linkedin.com/in/ariassilva/). El proyecto cuenta con la colaboración de los docentes Dr. Enrique Personal y D. Antonio Parejo de la Universidad de Sevilla.
 
 El objetivo de este trabajo es mostrar el uso y potenciales aplicaciones de la herramienta de desagregación de la demanda Non-Intrusive Load Monitoring Toolkit ([NILMTK](http://nilmtk.github.io/)) a través de la implementación de un caso real que involucra la creación de un dataset de uso público con datos de energía del Aula 2.2 Bis de la Escuela Politécnica Superior de la Universidad de Sevilla.
 
@@ -11,8 +11,8 @@ La desagregación de la demanda, también conocida como Non-Intrusive Load Monit
 
 Dentro de sus beneficios se destacan los siguientes:
 
-- Información detallada de la factura eléctrica
-- Aplicaciones de respuesta a la demanda o *demand response* (DR) 
+- Información detallada de la factura eléctrica al consumidor (prosumidor)
+- Aplicaciones en programas de respuesta a la demanda o *demand response* (DR) 
 - Identificación de averías y consumo ilegal de energía
 
 En la siguiente figura se muestra un ejemplo de desagregación de la demanda usando el dataset [REDD](http://redd.csail.mit.edu/):
@@ -61,7 +61,7 @@ Para la creación de un dataset compatible con NILMTK es necesario contar con un
 
 ### Análisis y modelos de desagregación 
 
-Con la ayuda de las diversas funciones de NILMTK se analizan datos y metadatos del dataset DEPS. En los siguientes notebooks se presentan diversos análisis y preprocesamiento necesario para posteriormente generar y comparar diversos modelos de desagregación usando varios periodos y métodos de muestreo basados en los algoritmos CO (*Combinatorial Optimisation*) y FHMM (*Factorial Hidden Markov Models*):
+Con la ayuda de las diversas funciones de NILMTK se analizan datos y metadatos del dataset DEPS. En los siguientes notebooks se presentan diversos análisis y preprocesamiento necesario para posteriormente generar y comparar diversos modelos de desagregación usando varios periodos y métodos de muestreo basados en los algoritmos CO (*Combinatorial Optimisation*) y FHMM (*Factorial Hidden Markov Model*):
 
 - [Análisis - NILMTK-DF](https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/1.An%C3%A1lisis%20-%20NILMTK-DF.ipynb)
 - [Análisis - Diagnóstico y Estadísticas](https://github.com/AriasSilva/DEPS_NILM_Dataset/blob/master/notebooks/2.An%C3%A1lisis%20-%20Diagn%C3%B3stico%20y%20Estad%C3%ADsticas.ipynb)
@@ -81,3 +81,9 @@ Utilizando el modelo con el mejor desempeño en el dataset DEPS, **se ha impleme
 A continuación se muestra una captura de pantalla del reporte, el cual puede ser consultado en el [siguiente enlace](https://ariassilva.github.io/DEPS_NILM_Dataset/reporte/report.html) y cuyo código escrito en Python se encuentra [acá](/reporte/create_report.py).
 
 [![reporte](/imagenes/reporte.png)](https://ariassilva.github.io/DEPS_NILM_Dataset/reporte/report.html)
+
+## Conclusiones del Trabajo
+
+La desagregación de la demanda se presenta como una técnica innovadora capaz de enfrentar de manera directa el problema de la eficiencia energética brindando información sobre los consumos eléctricos utilizando métodos no intrusivos.
+
+Este trabajo demuestra que el uso de una herramienta como NILMTK, dedicada a la investigación, puede utilizarse en aplicaciones reales sin perder su esencia. Adicionalmente, como principal aporte del presente trabajo, se encuentra a implementación del nuevo dataset DEPS. Este dataset es de carácter público, por lo cual se ponen a disposición de quienes estén interesados,  los datos recolectados y las herramientas necesarias para que estos sean compatibles con NILMTK. Este hecho permite colaborar con la comunidad NILM en el sentido compartir información valiosa, debido a que pocos dataset contienen datos de instalaciones de tipo universitario, las cuales poseen una curva de demanda distinta a otro tipo de instalaciones. 
